@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   logOut();
 
   // const kitchenId = getCookie("kitchenId");
-
+  // const actual = 'https://aircook-n-cuisine.herokuapp.com/listings/9'
   const currentURL = window.location.href;
-  const kitchenId = currentURL.match(/\d+/g)[1];
-  console.log(currentURL)
+  const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+  // console.log(kitchenId)
 
   try {
     let res = await fetch(`${api}kitchens/${kitchenId}`, {
