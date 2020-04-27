@@ -3,7 +3,7 @@ const currentBookingsContainer = document.querySelector(".currentBookings");
 const reviewSelector = document.getElementById("reviewSelector");
 const kitchenReview = document.querySelector(".kitchen-review-form");
 import { logOut, isLoggedIn, goToProfile, goToListings } from "./tools.js";
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 
 if (localStorage.getItem("AIRCNC_CURRENT_USER_ROLE") === '1') {
     window.location.href = "/dashboard";

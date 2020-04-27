@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+require("dotenv").config()
 const { api, port } = require("./config");
 
 
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
+    console.log(api)
     res.render('home')
 });
 

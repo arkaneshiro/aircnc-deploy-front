@@ -1,5 +1,5 @@
 import { logOut, isLoggedIn, createListing, goToDashboard } from "./tools.js";
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 const userId = localStorage.getItem("AIRCNC_CURRENT_USER_ID");
 const reviewSelector = document.getElementById("reviewSelector");
 const pastBookingsContainer = document.querySelector(".pastBookings");

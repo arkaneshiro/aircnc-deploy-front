@@ -1,5 +1,5 @@
 import { logOut, isLoggedIn, goToProfile } from "./tools.js";
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 
 if (localStorage.getItem("AIRCNC_CURRENT_USER_ROLE") === '1') {
   window.location.href = "/dashboard";

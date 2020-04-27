@@ -6,7 +6,7 @@ const hiddenButton = document.querySelector('.hiddenButton');
 const logInForm = document.querySelector(".login-form");
 const signInAsDemoGuestButton = document.querySelector('.demoUser');
 const signInAsDemoHostButton = document.querySelector('.demoHost');
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 
 loginButton.addEventListener('click', () => {
   hiddenForm.classList.remove("hidden");

@@ -1,5 +1,5 @@
 const signUpForm = document.querySelector(".sign-up-form");
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 
 signUpForm.addEventListener("submit", async (ev) => {
   ev.preventDefault();

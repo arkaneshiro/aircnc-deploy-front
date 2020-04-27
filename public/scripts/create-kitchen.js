@@ -1,6 +1,6 @@
 //dont forget to set hostId in body to localStorage Id
 import { logOut, isLoggedIn, createListing, goToDashboard } from "./tools.js";
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 //set up the form
 window.addEventListener('DOMContentLoaded', async () => {
     isLoggedIn();

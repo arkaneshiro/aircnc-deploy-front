@@ -4,7 +4,7 @@ import {
   goToListings,
   logOut
 } from './tools.js';
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   isLoggedIn();

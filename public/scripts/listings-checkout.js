@@ -4,7 +4,7 @@ import {
   isLoggedIn,
   goToListings
 } from './tools.js';
-import { api } from "getapi.js";
+import { api } from "./getapi.js";
 
 goToProfile();
 logOut();
