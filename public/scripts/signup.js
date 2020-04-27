@@ -1,4 +1,5 @@
 const signUpForm = document.querySelector(".sign-up-form");
+import { api } from "getapi.js";
 
 signUpForm.addEventListener("submit", async (ev) => {
   ev.preventDefault();
@@ -11,7 +12,7 @@ signUpForm.addEventListener("submit", async (ev) => {
   }
 
   try {
-    const res = await fetch("http://localhost:8080/users", {
+    const res = await fetch(`${api}users`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {

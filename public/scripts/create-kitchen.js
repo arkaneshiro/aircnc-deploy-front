@@ -1,5 +1,6 @@
 //dont forget to set hostId in body to localStorage Id
 import { logOut, isLoggedIn, createListing, goToDashboard } from "./tools.js";
+import { api } from "getapi.js";
 //set up the form
 window.addEventListener('DOMContentLoaded', async () => {
     isLoggedIn();
@@ -9,9 +10,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     const stateDropDown = document.getElementById('states');
     const cityDropDown = document.getElementById('cities');
 
-    const states = await fetch('http://localhost:8080/tools/states');
+    const states = await fetch(`${api}tools/states`);
     const statesData = await states.json();
-    const cities = await fetch('http://localhost:8080/tools/cities');
+    const cities = await fetch(`${api}tools/cities`);
     const citiesData = await cities.json();
 
     //populate state dropDown
@@ -33,7 +34,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     //display features to choose from
     const featuresDivLeft = document.getElementById('features__left');
     const featuresDivRight = document.getElementById('features__right');
-    const features = await fetch('http://localhost:8080/tools/features')
+    const features = await fetch(`${api}tools/features`)
     const featuresData = await features.json();
     //eleminates whitespace in feature for use in name attribute
     const featureNames = featuresData.features.map(feature => {
@@ -143,7 +144,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 rate: parseInt(formData.get('rate'), 10)
             }
 
-            const createKitchen = await fetch('http://localhost:8080/kitchens', {
+            const createKitchen = await fetch(`${api}kitchens`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${localStorage.getItem('AIRCNC_ACCESS_TOKEN')}`
@@ -170,7 +171,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                         featureId: parseInt(formData.get(featureNames[i]))
                     }
 
-                    const feature = await fetch('http://localhost:8080/kitchenfeatures', {
+                    const feature = await fetch(`${api}kitchenfeatures`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${localStorage.getItem('AIRCNC_ACCESS_TOKEN')}`

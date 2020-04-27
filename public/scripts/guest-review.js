@@ -1,5 +1,7 @@
 const guestReview = document.querySelector(".guest-review-form");
 
+
+
 guestReview.addEventListener("submit", async (ev) => {
   ev.preventDefault();
   const id = getCookie("id");

@@ -1,11 +1,17 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-
-app.use(express.static(path.join(__dirname, 'public'))); 
+const { api, port } = require("./config");
 
 
 app.set("view engine", "pug");
+app.use(express.static(path.join(__dirname, 'public'))); 
+
+app.use((req, res, next) => {
+    res.locals.api = api;
+    next();
+})
+
 
 app.get('/', (req, res) => {
     res.render('home')
@@ -64,4 +70,4 @@ app.get('/listings/:id(\\d+)/checkout', (req, res) => {
     res.render('listing-checkout')
 });
 
-app.listen(4000, () => console.log(`Listening on port 4000...`));
+app.listen(port, () => console.log(`Listening on port ${port}...`));

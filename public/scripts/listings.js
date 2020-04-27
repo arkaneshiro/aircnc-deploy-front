@@ -1,4 +1,5 @@
 import { logOut, isLoggedIn, goToProfile } from "./tools.js";
+import { api } from "getapi.js";
 
 if (localStorage.getItem("AIRCNC_CURRENT_USER_ROLE") === '1') {
   window.location.href = "/dashboard";
@@ -27,7 +28,7 @@ const getListings = async (search) => {
     // const userId = localStorage.getItem("AIRCNC_USER_ID");
     // console.log(search);
     // change fetch to search and query on search params
-    const res = await fetch("http://localhost:8080/kitchens/search",
+    const res = await fetch(`${api}kitchens/search`,
       {
         method: "POST",
         headers: {

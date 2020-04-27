@@ -1,4 +1,5 @@
 import { logOut, isLoggedIn, createListing, goToDashboard } from "./tools.js";
+import { api } from "getapi.js";
 const userId = localStorage.getItem("AIRCNC_CURRENT_USER_ID");
 const reviewSelector = document.getElementById("reviewSelector");
 const pastBookingsContainer = document.querySelector(".pastBookings");
@@ -16,7 +17,7 @@ if (localStorage.getItem("AIRCNC_CURRENT_USER_ROLE") === 2) {
 currentBookingsContainer.addEventListener("click", async () => {
     if ((event.target.value).startsWith("bookings/")) {
         try {
-            const res = await fetch(`http://localhost:8080/${event.target.value}`, {
+            const res = await fetch(`${api}${event.target.value}`, {
                 method: "PATCH",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem(
@@ -45,7 +46,7 @@ guestReview.addEventListener("submit", async (ev) => {
     const bearerToken = localStorage.getItem("AIRCNC_ACCESS_TOKEN");
 
     try {
-        let bookingData = await fetch(`http://localhost:8080/bookings/${id}`, {
+        let bookingData = await fetch(`${api}bookings/${id}`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -65,7 +66,7 @@ guestReview.addEventListener("submit", async (ev) => {
             wouldHostAgain: `${wouldHostAgain.checked ? true : false}`
         };
 
-        const res = await fetch(`http://localhost:8080/users/${booking.renterId}/reviews`, {
+        const res = await fetch(`${api}users/${booking.renterId}/reviews`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -121,7 +122,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     goToDashboard();
     try {
         // fetch call to get hosts kitchens
-        const res = await fetch(`http://localhost:8080/users/${userId}/kitchens`, {
+        const res = await fetch(`${api}users/${userId}/kitchens`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(
                     "AIRCNC_ACCESS_TOKEN"
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         // fetch call to get hosts bookings
-        const resII = await fetch(`http://localhost:8080/users/${userId}/kitchens/bookings`, {
+        const resII = await fetch(`${api}users/${userId}/kitchens/bookings`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(
                     "AIRCNC_ACCESS_TOKEN"

@@ -8,6 +8,7 @@ html(lang="en")
 		link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png")
 		link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png")
 		link(rel="manifest" href="/images/favicon/site.webmanifest")
+		link(rel="api" href=`${api}`)
 		title Listings Checkout
 		script(async defer type="module" src="/scripts/listings-checkout.js")
 		style
@@ -27,7 +28,7 @@ html(lang="en")
 						.bookings-form__left-bottom__features-header Features
 						.bookings-form__left-bottom__features-body.card
 					.bookings-form__left-bottom__calendar
-						.card 
+						.card
 							h3#monthAndYear
 							table#calendar.table.table-bordered
 								thead

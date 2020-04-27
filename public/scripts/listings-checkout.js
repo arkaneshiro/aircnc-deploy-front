@@ -4,6 +4,7 @@ import {
   isLoggedIn,
   goToListings
 } from './tools.js';
+import { api } from "getapi.js";
 
 goToProfile();
 logOut();
@@ -108,7 +109,7 @@ const showCalendar = (month, year) => {
 const kitchenDetails = async () => {
   const currentURL = window.location.href;
   const kitchenId = currentURL.match(/\d+/g)[1];
-  const res = await fetch(`http://localhost:8080/kitchens/${kitchenId}`, {
+  const res = await fetch(`${api}kitchens/${kitchenId}`, {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${localStorage.getItem("AIRCNC_ACCESS_TOKEN")}`
@@ -142,7 +143,7 @@ const kitchenDetails = async () => {
     </div>
     <div class="bookings-form__left-top__kitchen-location-container">
       <div class="bookings-form__left-top__kitchen-location card-body">
-        Kitchen in ${kitchen.city.cityName}, ${kitchen.state.stateName} 
+        Kitchen in ${kitchen.city.cityName}, ${kitchen.state.stateName}
       </div>
       <div class="bookings-form__left-top__kitchen-star-rating">
         ${starRating} rating ${kitchenReviews.length} reviews
@@ -234,7 +235,7 @@ document.querySelector(".checkout__submit-booking")
     console.log(kitchenId)
 
     //get picture for kitchen
-    const kitchenData = await fetch(`http://localhost:8080/kitchens/${kitchenId}`, {
+    const kitchenData = await fetch(`${api}kitchens/${kitchenId}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('AIRCNC_ACCESS_TOKEN')}`,
         "Content-Type": "application/json"
@@ -263,7 +264,7 @@ document.querySelector(".checkout__submit-booking")
     }
 
     try {
-      const res = await fetch("http://localhost:8080/kitchens/1", {
+      const res = await fetch(`${api}kitchens/${kitchenId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

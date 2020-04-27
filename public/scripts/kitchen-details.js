@@ -4,6 +4,7 @@ import {
   goToListings,
   logOut
 } from './tools.js';
+import { api } from "getapi.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   isLoggedIn();
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const kitchenId = currentURL.match(/\d+/g)[1];
 
   try {
-    let res = await fetch(`http://localhost:8080/kitchens/${kitchenId}`, {
+    let res = await fetch(`${api}kitchens/${kitchenId}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('AIRCNC_ACCESS_TOKEN')}`,
         "Content-Type": "application/json"

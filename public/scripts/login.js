@@ -6,6 +6,7 @@ const hiddenButton = document.querySelector('.hiddenButton');
 const logInForm = document.querySelector(".login-form");
 const signInAsDemoGuestButton = document.querySelector('.demoUser');
 const signInAsDemoHostButton = document.querySelector('.demoHost');
+import { api } from "getapi.js";
 
 loginButton.addEventListener('click', () => {
   hiddenForm.classList.remove("hidden");
@@ -37,7 +38,7 @@ logInForm.addEventListener("submit", async (e) => {
   // console.log(username);
 
   try {
-    const res = await fetch("http://localhost:8080/users/token", {
+    const res = await fetch(`${api}users/token`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -101,7 +102,7 @@ signInAsDemoGuestButton.addEventListener('click', async () => {
     password: 'demo_guest'
   }
   try {
-    const res = await fetch("http://localhost:8080/users/token", {
+    const res = await fetch(`${api}users/token`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -135,7 +136,7 @@ signInAsDemoHostButton.addEventListener('click', async () => {
     password: 'demo_host'
   }
   try {
-    const res = await fetch("http://localhost:8080/users/token", {
+    const res = await fetch(`${api}users/token`, {
       method: "POST",
       body: JSON.stringify(body),
       headers: {

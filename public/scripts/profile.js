@@ -3,6 +3,7 @@ const currentBookingsContainer = document.querySelector(".currentBookings");
 const reviewSelector = document.getElementById("reviewSelector");
 const kitchenReview = document.querySelector(".kitchen-review-form");
 import { logOut, isLoggedIn, goToProfile, goToListings } from "./tools.js";
+import { api } from "getapi.js";
 
 if (localStorage.getItem("AIRCNC_CURRENT_USER_ROLE") === '1') {
     window.location.href = "/dashboard";
@@ -12,7 +13,7 @@ if (localStorage.getItem("AIRCNC_CURRENT_USER_ROLE") === '1') {
 currentBookingsContainer.addEventListener("click", async () => {
     if ((event.target.value).startsWith("bookings/")) {
         try {
-            const res = await fetch(`http://localhost:8080/${event.target.value}`, {
+            const res = await fetch(`${api}${event.target.value}`, {
                 method: "PATCH",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem(
@@ -44,7 +45,7 @@ kitchenReview.addEventListener("submit", async (ev) => {
     const featureBool = document.getElementById("featureBool");
 
     try {
-        let bookingData = await fetch(`http://localhost:8080/bookings/${bookingId}`, {
+        let bookingData = await fetch(`${api}bookings/${bookingId}`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -68,7 +69,7 @@ kitchenReview.addEventListener("submit", async (ev) => {
     // res = res.json();
 
 
-        const res = await fetch(`http://localhost:8080/kitchens/${kitchenId}/reviews`, {
+        const res = await fetch(`${api}kitchens/${kitchenId}/reviews`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //fetch call to get all bookings for a guest
     try {
-        const res = await fetch(`http://localhost:8080/users/${userId}/bookings`, {
+        const res = await fetch(`${api}users/${userId}/bookings`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(
                     "AIRCNC_ACCESS_TOKEN"
