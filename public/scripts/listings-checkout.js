@@ -108,7 +108,7 @@ const showCalendar = (month, year) => {
 
 const kitchenDetails = async () => {
   const currentURL = window.location.href;
-  const kitchenId = currentURL.match(/\d+/g)[0];
+  const kitchenId = currentURL.match(/\d+/g)[1];
 
   const res = await fetch(`${api}kitchens/${kitchenId}`, {
     headers: {
@@ -232,7 +232,7 @@ document.querySelector(".checkout__submit-booking")
   .addEventListener("submit", async ev => {
     ev.preventDefault();
     const currentURL = window.location.href;
-    const kitchenId = currentURL.match(/\d+/g)[0];
+    const kitchenId = currentURL.match(/\d+/g)[1];
     console.log(kitchenId)
 
     //get picture for kitchen
