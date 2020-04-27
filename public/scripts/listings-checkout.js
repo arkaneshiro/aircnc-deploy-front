@@ -231,8 +231,6 @@ document.querySelector(".bookings__start-end-time")
 document.querySelector(".checkout__submit-booking")
   .addEventListener("submit", async ev => {
     ev.preventDefault();
-    // const currentURL = window.location.href;
-    // const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
     const currentURL = window.location.href;
     const kitchenId = currentURL.match(/\d+/g)[0];
     console.log(kitchenId)
