@@ -108,9 +108,8 @@ const showCalendar = (month, year) => {
 
 const kitchenDetails = async () => {
   const currentURL = window.location.href;
-  const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
-  // const currentURL = window.location.href;
-  // const kitchenId = currentURL.match(/\d+/g)[1];
+  const kitchenId = currentURL.match(/\d+/g)[0];
+
   const res = await fetch(`${api}kitchens/${kitchenId}`, {
     headers: {
       "Content-Type": "application/json",
@@ -232,10 +231,10 @@ document.querySelector(".bookings__start-end-time")
 document.querySelector(".checkout__submit-booking")
   .addEventListener("submit", async ev => {
     ev.preventDefault();
-    const currentURL = window.location.href;
-    const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
     // const currentURL = window.location.href;
-    // const kitchenId = currentURL.match(/\d+/g)[1];
+    // const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+    const currentURL = window.location.href;
+    const kitchenId = currentURL.match(/\d+/g)[0];
     console.log(kitchenId)
 
     //get picture for kitchen
