@@ -233,7 +233,9 @@ document.querySelector(".checkout__submit-booking")
   .addEventListener("submit", async ev => {
     ev.preventDefault();
     const currentURL = window.location.href;
-    const kitchenId = currentURL.match(/\d+/g)[1];
+    const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+    // const currentURL = window.location.href;
+    // const kitchenId = currentURL.match(/\d+/g)[1];
     console.log(kitchenId)
 
     //get picture for kitchen
