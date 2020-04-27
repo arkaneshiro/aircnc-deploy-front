@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const currentURL = window.location.href;
   const kitchenId = currentURL.match(/\d+/g)[1];
+  console.log(kitchenId)
 
   try {
     let res = await fetch(`${api}kitchens/${kitchenId}`, {

@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
-    console.log(api)
+    // console.log(api)
     res.render('home')
 });
 
