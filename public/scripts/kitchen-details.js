@@ -145,7 +145,9 @@ document.getElementById("kitchenDetails__info-button")
 addEventListener("click", (ev) => {
   if (ev.target.id === "kitchenDetails__info-button") {
     const currentURL = window.location.href;
-    const kitchenId = currentURL.match(/\d+/g)[1];
+    const kitchenId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+    // const currentURL = window.location.href;
+    // const kitchenId = currentURL.match(/\d+/g)[1];
     // console.log(kitchenId)
     window.location.href = `/listings/${kitchenId}/checkout`;
   } else {
