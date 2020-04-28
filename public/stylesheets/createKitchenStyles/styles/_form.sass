@@ -103,42 +103,57 @@ body
     @include fontStyle()
 
 .kitchen-form__middle
-    display: flex
-    flex-direction: column
-
+    width: 80%
+    margin: auto
+    margin-top: 25px
+    margin-bottom: 25px
 .features__img
     object-fit: cover
 // .features__img > img
     height: 100%
     width: 100%
 .features
-    width: 50%
+    width: 100%
 
 .features__feature
     display: flex
     flex-direction: row
     justify-content: space-around
-    width: 80%
+    width: 30%
+    border: 1px solid $blue
+    border-radius: 20px
 
 .errors-container
     @include fontStyleError()
-    
-    
+
+
 .features__img img
     width: 125px
     height: 125px
+    border-radius: 50%
 
 .features__left
     display: flex
-    flex-direction: column
+    flex-direction: row
+    flex-wrap: wrap
+    border-radius: 15px
 
 .features__middle
     display: flex
-    align-content: center
+    flex-direction: column-reverse
+    justify-content: center
+    font-size: 20px
+    font-weight: bold
+
+.features__bottom
+    display: flex
+    flex-direction: column-reverse
+    justify-content: center
 
 .features__right
     display: flex
-    align-content: center
+    flex-direction: column-reverse
+    justify-content: center
 
 // #file-upload-button, #create-kitchen-button
 //     @include fontStyle()

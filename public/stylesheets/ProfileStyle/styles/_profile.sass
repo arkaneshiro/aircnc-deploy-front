@@ -33,6 +33,10 @@ h1
     @include fontStyle()
     padding: 10px
 
+.bookings-bottom-half
+    display: flex
+    justify-content: center
+
 .bookings-top-half
     display: flex
     flex-direction: row
@@ -44,14 +48,19 @@ h1
     justify-content: center
     font-size: 25px
     font-weight: bold
-    border-bottom: 1px solid
+    // border-bottom: 1px solid
 
 .past-booking-container, .current-booking-container
     display: flex
     padding: 10px 10px
-    border-bottom: 1px solid
-    border-left: 1px solid
-    border-right: 1px solid
+    // border-bottom: 1px solid
+    // border-left: 1px solid
+    // border-right: 1px solid
+    border: 1px solid $blue
+    border-radius: 15px
+    width: 115%
+    font-size: 20px
+    @include fontStyle()
 
 // .past-booking__header:last-child
 //     color: $white
@@ -63,10 +72,14 @@ h1
     padding: 0px 0px 10px 0px
 
 
+
 .kitchen-review
     display: flex
     flex-direction: column
     justify-content: center
+    border: 1px solid $blue
+    border-radius: 25px
+    width: 50%
 
 .kitchen-review-label
     display: flex
@@ -100,3 +113,17 @@ h1
 
 .errors-container
     @include fontStyleError()
+
+button
+    @include buttonStyleBlue()
+    @include buttonShadow()
+
+.current-booking-detail
+        display: flex
+        flex-direction: column
+
+.cancel-booking-button
+    justify-content: flex-end
+
+.current-booking-container
+    // height: 150px
