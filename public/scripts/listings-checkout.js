@@ -34,6 +34,7 @@ const setPopUpListener = () => {
   let dates = document.querySelectorAll(".bookings__start-end-time__popup")
   dates.forEach(date => {
     date.addEventListener("click", ev => {
+      ev.preventDefault()
       const day = ev.target.id.slice(-2);
       const [month, year] = monthAndYear.innerHTML.split(" ");
       dateStr = `${month} ${day}, ${year}`;
@@ -135,19 +136,22 @@ const kitchenDetails = async () => {
 
   document.querySelector(".bookings-form__left-bottom__features-body").innerHTML = featuresHTML;
   document.querySelector(".bookings-form__left-top").innerHTML = `
-  <div class="bookings-form__left-top__kitchen-name card-body font-weight-bold d-flex justify-content-center">
-      ${kitchen.name}
-  </div>
+
   <div class="bookings-form__left-top-container">
     <div class="bookings-form__left-top__kitchen-feature-img">
       <img class="bookings-form__left-top__kitchen-img" src="${kitchen.imgPath[0]}">
     </div>
-    <div class="bookings-form__left-top__kitchen-location-container">
-      <div class="bookings-form__left-top__kitchen-location card-body">
-        Kitchen in ${kitchen.city.cityName}, ${kitchen.state.stateName}
+    <div class="bookings-form__left-top__kitchen-details">
+      <div class="bookings-form__left-top__kitchen-name">
+        ${kitchen.name}
       </div>
-      <div class="bookings-form__left-top__kitchen-star-rating">
-        ${starRating} rating ${kitchenReviews.length} reviews
+      <div class="bookings-form__left-top__kitchen-location-container">
+        <div class="bookings-form__left-top__kitchen-location">
+          Kitchen in ${kitchen.city.cityName}, ${kitchen.state.stateName}
+        </div>
+        <div class="bookings-form__left-top__kitchen-star-rating">
+          ${starRating} rating ${kitchenReviews.length} reviews
+        </div>
       </div>
     </div>
   </div>
