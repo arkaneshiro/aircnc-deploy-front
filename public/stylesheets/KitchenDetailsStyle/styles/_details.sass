@@ -24,14 +24,19 @@ body
 
 .kitchenDetails__row-1__info
     display: flex
-    flex-direction: column
+    flex-direction: row
     flex: 1
-    justify-content: center
-    align-items: center
-    align-content: center
+    justify-content: space-around
+    // align-items: center
+    // align-content: center
     // margin-top: 80px
     margin-bottom: 20px
     margin-left: 80px
+
+.kitchenDetails__detail-container
+    display: flex
+    flex-direction: column
+
 
 .kitchenDetails__info__featured-img img
     width: 500px
@@ -53,8 +58,8 @@ body
     @include fontStyle()
     text-align: center
 
-.kitchenDetails__info__button
-    padding-left: 25px
+// .kitchenDetails__info__button
+//     padding-left: 25px
 
 .kitchenDetails__info__star-rating
     @include star()
@@ -100,25 +105,25 @@ body
 .kitchenDetails__info__description
     @include fontStyle()
     font-size: 30px
-    margin: 8px 25px 8px
-    padding-left: 40px
-    font-size: 20px
+    // margin: 8px 25px 8px
+    // padding-left: 40px
+    // font-size: 20px
     outline: none
     text-align: center
-    width: 40%
+    // width: 40%
 
 .kitchenDetails__info_button-bookings
     @include buttonStyleBlue()
     border: 1px solid $blue
     border-radius: 20px
     font-size: 15px
-    margin: 8px 25px 8px
+    // margin: 8px 25px 8px
     text-align: center
 
 .kitchenDetails__info__button
     display: flex
     justify-content: center
-    width: 53%
+    // width: 53%
 
 .kitchenDetails__row-header
     text-align: start
@@ -145,7 +150,7 @@ body
     justify-content: center
 
 .kitchenDetails__row-3__description-text
-    @include fontStyleWhite()
+    @include fontStyle()
     font-size: 24px
     font-style: italic
     text-align: center
