@@ -170,11 +170,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             const endDay = endDate.substring(8, 10);
 
 
-            if (isConfirmed) {
-                confirmation = "Confirmed!";
-            } else {
-                confirmation = "Cancelled!";
-            }
+            // if (isConfirmed) {
+            //     confirmation = "Confirmed!";
+            // } else {
+            //     confirmation = "Cancelled!";
+            // }
 
             return `
             <div class="past-booking-container past-booking${id}">
@@ -185,7 +185,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="past-booking-kitchen-name"> ${name} </div>
                     <div class="past-booking-kitchen-address"> ${streetAddress} ${city}, ${state} </div>
                     <div class="past-booking-date"> ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear} </div>
-                    <div class="past-booking-confirmation"> ${confirmation} </div>
                 </div>
             </div>`;
         });

@@ -234,7 +234,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="past-booking-kitchen-name"> ${name} </div>
                     <div class="past-booking-kitchen-address"> ${streetAddress} ${city}, ${state} </div>
                     <div class="past-booking-date"> ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear} </div>
-                    <div class="past-booking-confirmation"> ${confirmation} </div>
                 </div>
             </div>`;
         });

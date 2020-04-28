@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.querySelector(".kitchenDetails__row-4__features").innerHTML = features;
 
-    console.log(kitchenReviews);
+    // console.log(kitchenReviews);
     let kitchenReviewHTML = "";
     kitchenReviews.forEach(kitchenReview => {
       kitchenReviewHTML += `
