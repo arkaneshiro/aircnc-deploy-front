@@ -79,6 +79,15 @@ h1 {
   padding: 10px;
 }
 
+.bookings-bottom-half {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .bookings-top-half {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,7 +110,6 @@ h1 {
           justify-content: center;
   font-size: 25px;
   font-weight: bold;
-  border-bottom: 1px solid;
 }
 
 .past-booking-container, .current-booking-container {
@@ -109,9 +117,13 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   padding: 10px 10px;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
+  border: 1px solid #004873;
+  border-radius: 15px;
+  margin-bottom: 2px;
+  font-size: 20px;
+  color: #004873;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
 }
 
 .past-booking-confirmation, .past-booking-kitchen-name, .past-booking-kitchen-address, .past-booking-date {
@@ -133,6 +145,9 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 1px solid #004873;
+  border-radius: 25px;
+  width: 50%;
 }
 
 .kitchen-review-label {
@@ -177,5 +192,47 @@ h1 {
   font-size: 14px;
   font-style: italic;
   text-align: center;
+}
+
+button {
+  text-align: center;
+  font-size: 19px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #004873;
+  text-decoration: none;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 50px;
+  padding: 5px 16px;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 400;
+}
+
+button:hover {
+  border-radius: 30px;
+  border: 1.25px solid #004873;
+  color: #8BD9D9;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.current-booking-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cancel-booking-button {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 /*# sourceMappingURL=style.css.map */
