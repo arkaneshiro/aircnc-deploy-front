@@ -15,9 +15,12 @@ html(lang="en")
 			include ../public/stylesheets/ListingCheckoutStyles/styles/style.css
 	body
 		.navBar
-			button(id="profile-button" class="profile") Profile
-			button(id="listings-button" class="listingsButton" href="/kitchens") Listings
-			button(id="logout-button" class="logoutButton" href="/") Log out
+			.navImage
+				img(class="logo" src="/images/logo/aircnc-navbar-white.png")
+			div.navButtons
+				button(id="profile-button" class="profile") Profile
+				button(id="listings-button" class="listingsButton" href="/kitchens") Listings
+				button(id="logout-button" class="logoutButton" href="/") Log out
 		.navListings
 		#booking-form.bookings-form
 			.bookings-form__left

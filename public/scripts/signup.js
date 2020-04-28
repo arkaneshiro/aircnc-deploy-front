@@ -1,6 +1,14 @@
 const signUpForm = document.querySelector(".sign-up-form");
 import { api } from "./getapi.js";
 
+document.querySelector(".home").addEventListener('click', () => {
+  window.location.href = '/'
+});
+
+document.querySelector(".help").addEventListener('click', () => {
+  window.location.href = 'https://github.com/arkaneshiro/aircnc'
+});
+
 signUpForm.addEventListener("submit", async (ev) => {
   ev.preventDefault();
   console.log("HERE!!!!!!!!!!!");

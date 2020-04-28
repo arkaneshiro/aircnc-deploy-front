@@ -15,10 +15,11 @@ html(lang="en")
     title AirCnC - Sign Up
   body
     .nav
-      button(class="hostSignupButton") Host Your Kitchen
-      button(class="help") Help
-      button(class="signupButton") Sign Up
-      button(class="loginButton" href="/log-in") Log in
+      .navImage
+        img(class="logo" src="/images/logo/aircnc-navbar-white.png")
+      .navButtons
+        button(class="home") Home
+        button(class="help") Help
     .sign-up
 
       form(class="sign-up-form")
@@ -41,5 +42,4 @@ html(lang="en")
         .signup-form__confirm-password-container
           +createInput("password", "confirmPassword", "sign-up-form__confirmPassword", "confirmPassword", "Confirm Password", true, false, "new-password")
         button(type="submit" class="signupButton") Sign Up
-    script
-      include ../public/scripts/signup.js
+    script(type="module" src="scripts/signup.js")
