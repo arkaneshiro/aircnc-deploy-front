@@ -39,6 +39,10 @@ body {
   caret-color: #A68776;
 }
 
+.logo {
+  margin-left: 50px;
+}
+
 div.nav {
   display: -webkit-box;
   display: -ms-flexbox;
