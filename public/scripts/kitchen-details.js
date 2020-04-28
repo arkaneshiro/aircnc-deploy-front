@@ -56,21 +56,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     const roleId = localStorage.getItem("AIRCNC_CURRENT_USER_ROLE");
     // console.log(starRating);
     document.querySelector(".kitchenDetails__row-1__info").innerHTML = `
-      <div class="kitchenDetails__info__name">
-        ${kitchen.name}
-      </div>
-      <div class="kitchenDetails__info__description">
-        Beautiful Kitchen In ${kitchen.city.cityName}
-      </div>
-      <div class="kitchenDetails__info__star-rating">
-        ${starRating} Star Rating
-      </div>
-      <div class="kitchenDetails__info__rate">
-        Rate: $${kitchen.rate} / hour
-      </div>
-      <div class="kitchenDetails__info__button">
-        <button id="kitchenDetails__info-button" class="kitchenDetails__info_button-bookings">${roleId === '1' ? 'See All Bookings' : 'Book Now'}</button>
-      </div>
+      <div class="kitchenDetails__detail-container">
+        <div class="kitchenDetails__info__name">
+          ${kitchen.name}
+        </div>
+        <div class="kitchenDetails__info__description">
+          Beautiful Kitchen In ${kitchen.city.cityName}
+        </div>
+        <div class="kitchenDetails__info__star-rating">
+          ${starRating} Star Rating
+        </div>
+        <div class="kitchenDetails__info__rate">
+          Rate: $${kitchen.rate} / hour
+        </div>
+        <div class="kitchenDetails__info__button">
+          <button id="kitchenDetails__info-button" class="kitchenDetails__info_button-bookings">${roleId === '1' ? 'See All Bookings' : 'Book Now'}</button>
+        </div>
+      </div/
       <div class="kitchenDetails__info__featured-img-container">
         <div class="kitchenDetails__info__featured-img">
           <img src="${kitchen.imgPath[0]}">
