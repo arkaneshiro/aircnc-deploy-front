@@ -9,7 +9,7 @@ function initMap(latLngRate) {
   if (latLngRate) {
     const map = new google.maps.Map(
       document.getElementById('map'), {
-      zoom: 12,
+      zoom: 10,
       center: { lat: latLngRate[0][0], lng: latLngRate[0][1] }
     });
 
